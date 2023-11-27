@@ -1,9 +1,20 @@
 import "./styles.css";
-import { Header, Footer, Hero, Subscribe, Avatar } from "./components";
+import { Header, Footer } from "./components";
+import { Home, Login, Shop, Classes, Video } from "./pages/";
+import { Routes, Route } from "react-router-dom";
 export default function App() {
   return (
-    <div className="App container mx-auto px-8">
+    <div>
       <Header />
+      <Routes>
+        <Route path="/video" exact element={<Video />} />
+        <Route path="/class" exact element={<Classes />} />
+        <Route path="/shop" exact element={<Shop />} />
+        <Route path="/login" exact element={<Login />} />
+        <Route path="/*" exact element={<Home />} />
+      </Routes>
+      <Footer />
+      {/* <Header />
       <Hero
         title="Achieve Your Health and Fitness Goals with FitLife"
         subtitle="Your one-stop destination for personalized health and fitness solutions"
@@ -32,7 +43,6 @@ export default function App() {
           src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMzczODV8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDEwNjE5MDd8&ixlib=rb-4.0.3&q=80&w=1080"
         />
       </div>
-
       <Hero
         title="State-of-the-Art Fitness Devices"
         subtitle="Enhance your fitness journey with our state-of-the-art devices designed to track your progress, increase productivity, and keep detailed records. Stay motivated and stay on track towards your goals."
@@ -43,7 +53,6 @@ export default function App() {
           src="https://images.unsplash.com/photo-1502904550040-7534597429ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMzczODV8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDEwNjE5MDd8&ixlib=rb-4.0.3&q=80&w=1080"
         />
       </div>
-
       <Hero
         title="Expert Coaching and Support"
         subtitle="Receive personalized one-to-one coaching sessions with experienced fitness professionals who will offer guidance and support throughout your fitness journey. Get the expertise you need to succeed."
@@ -59,7 +68,6 @@ export default function App() {
           <Avatar title="Lillian Clark" />
         </Hero>
       </div>
-
       <div className="border-2 rounded-lg mt-4 p-4">
         <Hero
           title="Start Your FitLife Journey Today."
@@ -68,7 +76,7 @@ export default function App() {
           <Subscribe />
         </Hero>
       </div>
-      <Footer />
+      <Footer />  */}
     </div>
   );
 }
