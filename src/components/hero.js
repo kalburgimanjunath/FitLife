@@ -1,9 +1,9 @@
 export default function Hero({ title, subtitle, children }) {
   return (
     <div>
-      <h1>{title}</h1>
-      <h3>{subtitle}</h3>
-      {children}
+      <h1>{title && title}</h1>
+      <h3>{subtitle && title}</h3>
+      {children && children}
     </div>
   );
 }
